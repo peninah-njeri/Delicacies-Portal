@@ -12,7 +12,7 @@ class Recipe(models.Model):
         return self.title
 
 
-class Ingredient(models.Model):
+class Ingredients(models.Model):
     ingredients = models.TextField(null=False)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
 
