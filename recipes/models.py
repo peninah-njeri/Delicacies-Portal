@@ -8,10 +8,26 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200),
     description = models.TextField()
 
+    def __str__(self):
+        return self.title
+
 
 class Ingredient(models.Model):
     ingredients = models.TextField(null=False)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.ingredients
+
+
+class Step(models.Model):
+    steps = models.TextField(null=False)
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.steps
+        
 
 
 
