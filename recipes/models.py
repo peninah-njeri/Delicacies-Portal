@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Recipe(models.Model):
+    title = models.CharField(max_length=200, null=True)
     image = models.ImageField()
-    title = models.CharField(max_length=200),
     description = models.TextField()
 
     def __str__(self):
